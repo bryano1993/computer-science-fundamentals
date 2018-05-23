@@ -17,25 +17,38 @@ anArray.push("Mary");
 
 c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
 
-function findSomeone (){
-   return (anArray.indexOf("Josh"));
+function findSomeone (name){
+   return (anArray.indexOf(name));
   }
 
 d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
 
-function findSomeone (){
-   return (anArray.indexOf("Emily"));
+function findSomeone (name){
+   return (anArray.indexOf(name));
   }
 
 It will return a -1
 
 e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
 
-anArray.unshift("Melissa");
+function cutInFontOfAva(name){
+  anArray.splice(1,0,name);
+  console.log(anArray);
+}
+
+
+console.log(cutInFontOfAva("Melissa"));
+
 
 f) If Patrick wants to leave the line, how would you delete him from the array?
 
-delete anArray[3];
+function deleteAnArray(index,howMany){
+  anArray.splice(index,howMany);
+  console.log(anArray);
+}
+
+
+console.log(deleteAnArray(3,1));
 
 
 2. Provide another real-world example that you can model using a data structure.
