@@ -1,0 +1,25 @@
+1. What is a hash table?
+
+A hash table is a type of data structure that stores each value by linking it to a key, forming key-value pairs. 
+
+2. What is hashing?
+
+A process of converting arbitrary data into a fixed-length hash code using a hashing function.
+
+3. How does a hash table store data?
+
+By following a list of steps which include first, taking the key. Second, convert the key to a Hash Code using a Hashing Function. Third, Mod the Hash Code to get an array index.
+Fourth, store the value in the array index.
+
+4.How are hash tables and objects different?
+
+They are different when it comes to their uses. Hash tables are used to identify the nature of your data.  You use a hash table when when your data contains a variable number of consistently formatted values, each with an identifier. 
+You use an object if your data is a static number of distinct values of different types.
+
+
+5. Determine whether you would use a hash table or an object to store each of the following pieces of data:
+A list of pets and their unique names.
+The name, age, and the birthday of your best friend.
+The name and location of every company in a given city.
+All of the books checked out from a library by a particular individual.
+The primary and secondary phone numbers for a contact.

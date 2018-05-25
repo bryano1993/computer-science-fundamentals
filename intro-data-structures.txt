@@ -31,24 +31,26 @@ It will return a -1
 
 e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
 
-function cutInFontOfAva(name){
-  anArray.splice(1,0,name);
+function cutInFontOf(newName,existingName){
+  anArray.splice(anArry.indexOf(existingName), 0, newName);
   console.log(anArray);
 }
 
 
-console.log(cutInFontOfAva("Melissa"));
+console.log(cutInFontOf("Melissa","Ava"));
 
 
 f) If Patrick wants to leave the line, how would you delete him from the array?
 
-function deleteAnArray(index,howMany){
-  anArray.splice(index,howMany);
+function deleteAnArray(name){
+  for (let i = 0; i<anArray.length; i++)
+  if (anArray[i] === name)
+  anArray.splice(i,1);
   console.log(anArray);
 }
 
 
-console.log(deleteAnArray(3,1));
+console.log(deleteAnArray("Patrick"));
 
 
 2. Provide another real-world example that you can model using a data structure.
