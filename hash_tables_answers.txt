@@ -18,8 +18,71 @@ You use an object if your data is a static number of distinct values of differen
 
 
 5. Determine whether you would use a hash table or an object to store each of the following pieces of data:
+
 A list of pets and their unique names.
+
+- Hash Table
+
 The name, age, and the birthday of your best friend.
+
+- Object
+
 The name and location of every company in a given city.
+
+- Hash Table
+
 All of the books checked out from a library by a particular individual.
+
+- Hash Table
+
 The primary and secondary phone numbers for a contact.
+
+- Object
+
+6. Build a system that allows a sales associate to enter a customer's name, address, and phone number into the system and look up customers using their phone numbers. Store this information in a hash table.
+
+function hashTableForCustomers (name,address,phonenumber)
+{
+    CREATE HashMapSystem
+    STORE each phonenumber (key) into HashMapSystem with associated name and address (value)
+}
+
+function lookUp (phonenumber)
+{
+    IF HashMapSystem has phonenumber
+        RETURN information
+        ELSE PRINT "I am sorry, that number does not exist"
+    ENDIF
+}
+
+7.Build a system that allows a store owner to track their store's inventory using a hash table for storage.
+
+function hashTableForInventory (productName,Id)
+{
+    CREATE HashMapSystem
+    STORE each Id (key) into HashMapSystem with associated productName (value)
+}
+
+function lookup (Id)
+{
+    IF HashMapSystem has Id
+        RETURN productName
+        ELSE PRINT "I am sorry, that Id does not exist"
+    ENDIF
+}
+
+8. Build a system that allows digital copies of newspapers to be entered and searched by publisher and publication date. Use hash tables to store the necessary data.
+
+function hashTableforNewsPaper (publisher, publicationDate)
+{
+    CREATE HashMapSystem
+    STORE each publicationDate (key) in HashMapSystem with associated publisher (value)
+}
+
+function lookUp(publicationDate) 
+{
+    IF HashMapSystem has publicationDate
+        RETURN publicationDate and publisher
+        ELSE PRINT "I am sorry, that publication date does not exist.
+        
+}
