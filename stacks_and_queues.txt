@@ -1,0 +1,126 @@
+1.What is the main difference between a stack and a queue?
+
+- The Stack data structure arranges elements in LIFO priority while the Queue data structure arranges elements in FIFO priority.
+
+2.What are the similarities between stacks and queues?
+
+- The similarities between the two is that they are both data structures. Also, another process is not allowed to pick items from the middle of the queue or the stack.
+  No indexs are available, as in arrays. 
+
+3.Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
+
+- I would pop the UNDO stack to undo a command, and I would then push the same command I popped into the REDO stack. When I redo a command, I would do everything in reverse. I would pop 
+the redo stack and push the popped command back into the undo stack.
+
+Programming Questions
+
+You may program the following question in any language of your choice. Before you begin coding, write out a plan as to how you will solve the question.
+
+1. Given a string, reverse it using a stack. For example, the string "Bloc!" should be converted to "!colB".
+
+FUNCTION push(item)
+    IF TOP is FULL 
+        PRINT "Stack Overflow"
+        ELSE push input to top of the stack
+    ENDIF
+END FUNCTION
+
+FUNCTION pop
+    IF TOP is empty
+        PRINT "Stack Underflow"
+        ELSE print topmost item and delete it from stack
+    ENDIF
+END FUNCTION
+
+FUNCTION main()
+  INIT a new stack
+  PRINT "Enter a string: "
+  FOR each item in original
+    CALL stack.push WITH character
+  END FOR
+  FOR each item in original
+    CALL stack.pop WITH character
+  END FOR
+  PRINT "The reversed string is: "
+END FUNCTION
+
+I used the programming language C
+
+#include<stdio.h>
+#include<string.h>
+
+//define maximum up to 20
+#define MAX 20
+
+int top = -1;
+char stack[MAX];
+
+/*Begin of push*/
+char push(char item)
+{
+	if(top == (MAX-1))
+		printf("Stack Overflow\n");
+	else
+		stack[++top] =item;
+}
+/*End of push*/
+
+/*Begin of pop*/
+char pop()
+{
+	if(top == -1)
+		printf("Stack Underflow\n");
+	else
+		return stack[top--];
+}
+/*End of pop*/
+
+/*Begin of main*/
+main()
+{
+	char str[20];
+	int i;
+	printf("Enter a string : " );
+	gets(str);
+	for(i=0;i<strlen(str);i++)
+		push(str[i]);
+	for(i=0;i<strlen(str);i++)
+		str[i]=pop();
+	printf("The reversed string is : ");
+	puts(str);
+}
+/*End of main*/
+
+
+2. Implement the delete functionality of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure.
+
+To delete an item, take all of the elements in the queue one at a time and put them at the end of the queue, except for the last one which should be deleted and returned.
+
+CLASS Stack
+ FUNCTION pop(queue)
+   FOR each element in queue
+      IF element is last in queue
+        CALL queue.shift
+        RETURN queue 
+      END IF
+      CALL queue.push WITH element
+      CALL queue.shift
+   END FOR
+ END FUNCTION
+END CLASS
+
+3.Fill in the methods for the following Queue class so that it will work as expected (FIFO).
+
+CLASS QUEUE
+ FUNCTION enqueue(element)
+  CALL array.push(element)
+ END FUNCTION
+
+ FUNCTION dequeue
+   CALL array.shift
+ END FUNCTION
+END CLASS
+
+
+
+
