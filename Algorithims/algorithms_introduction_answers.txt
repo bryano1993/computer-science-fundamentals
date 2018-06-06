@@ -1,0 +1,51 @@
+1. Using proper pseudo-code, describe the following primitive algorithms:
+
+Making coffee;
+    GET water
+    GET ground coffee
+    SET coffee machine button to off
+
+    SET ground coffee in coffee machine
+    SET water in coffee machine
+    SET coffee machine button to on
+
+Washing dishes;
+    GET dishwashing soap
+    GET dishes
+    SET dishwashing machine to off
+
+    SET dishes inside dishwashing machine
+    SET dishwashing machine to on
+
+A choice of your own.
+
+Making a fire
+    GET matches
+    GET firewood
+    GET newspaper
+    GET lighter fluid
+    SET firewood pile
+
+REPEAT
+    SET matches in firewood
+    SET newspaper in firewood
+    SET matches to on AND SET on firewood
+    SET lighter fluid in firewood
+UNTIL fire is on
+
+
+2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for a situation. 
+Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or manufacturing a product). 
+Google's algorithm produces more relevant results than other search engines; what about each of your cases make them stand out?
+
+    Netflix's recommendation algorithm recommends you shows that are similar to the ones you've watched in the past. 
+    Spotify's radio algorithm given a specific song/artist. It stands out for its ability to suggest very similar song and music styles to the given choice.
+    Uber's surge pricing algorithm stands out by giving you a specific price based on real time factors such as timing, weather, and the current supply and demand of Uber drivers. 
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+    - An algorithm is considered efficient if its resource consumption is below some pre-defined acceptable level i.e. it should run in a reasonable amount of time on an available computer or hardware specifications.
+    The two most common measures are:
+    Time: how long does the algorithm take to complete.
+    Space: how much working memory (typically RAM) is needed by the algorithm. This has two aspects: the amount of memory needed by the code, and the amount of memory needed for the data on which the code operates.
+    An inefficient algorithm is the opposite of an efficient algorithm.
