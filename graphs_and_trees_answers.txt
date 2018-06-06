@@ -1,0 +1,92 @@
+1.What is a binary tree and what makes it unique to other trees?
+
+- A Binary Tree is a data structure in which each Node may point to a left child and a right child. What makes a binary tree unique is that it enables quick searches. 3D game object
+rendering, and file compression. 
+
+2.What is a heuristic?
+
+- They are guesses that an algorithm makes to solve a complex problem sooner by sacrificing accuracy.
+
+3.What is another problem besides the shortest-path problem that requires the use of heuristics?
+
+- Modeling the behavior of a cryptocurrency trading.
+
+4.What is the difference between a depth-first search and a breadth-first search?
+
+- The difference between the two is that depth-first search start at the root and explores as far as possible along each branch before backtracking. On the other hand, breadth-first 
+search starts at the tree root and explores the neighbor nodes first, before moving to the next level neighbors.
+
+5.Explain in your own words what an undirected, a-cyclic, unweighted graph is.
+
+- An undirected graph is a graph that have nodes that are connected together where all edges are bidirectional.An A-cylical graph is a graph that has no loops. 
+An unweighted graph is a graph that does not have a cost of travel between nodes. 
+
+6.What kind of graph is a binary search tree?
+
+- Directed, a-cyclic, unweighted.
+
+Programming Questions
+
+For the following questions, describe in words how you could solve the problem and then do so. Use the depiction of the Binary Search Tree to refer to the examples.
+
+1.Given a Binary Search Tree and a value, write a function that checks to see whether the value exists within the tree.
+
+Example: The value 10 exists in the tree. The value 23 does not exist in the tree.
+
+function checkValue(number)
+{
+    var now = this.root;
+    while (now){
+        if (number == now.data){
+            return true;
+        }
+        if (number < now.number){
+            now = now.left;
+        } else {
+            now = now.right;
+        }
+        }
+    }
+    return false;
+}
+
+
+2. Given a Binary Search Tree and two nodes, n1 and n2, write a function that finds the distance between the two nodes.
+
+Example: The distance between the nodes 4 and 10 is 4. The distance between the nodes 8 and 10 is 1. The distance between the nodes 1 and 14 is 4.
+
+The distance between two nodes is as follows:
+Distance(n1, n2) = Distance(root, n1) + Distance(root, n2) + 2*Distance(root, lowest common ancestor)
+
+
+function calculateDistance(root, n1, n2) {
+  var a = identifyPathLength(root, n1);
+  var b = identifyPathLength(root, n2);
+  var lowestCommonAncestor = identifyLowestCommonAncestor(root, n1, n2);
+  var c = 2*identifyPathLength(root, lowestCommonAncestor);
+
+  return a + b - c;
+}
+
+function identifyLowestCommonAncestor(root, n1, n2) {
+  if (root === 0) {
+  return null;
+  } if (root > n1 && root > n2) {           
+    return identifyLowestCommonAncestor(root.left, n1, n2);
+  } else if (root < n1 && root < n2) {      
+    return identifyLowestCommonAncestor(root.right, n1, n2);
+  }                 
+  return root;
+}
+
+function identifyPathLength(root, n) {
+  if (root !=== null) {
+    var dist = 0;
+    if (root === n) {
+      return dist;           
+    } else if (root > n) {
+      return dist = 1 + identifyPathLength(root.left, n); 
+    } return dist = 1 + identifyPathLength(root.right, n); 
+  } 
+  return 0;
+}
