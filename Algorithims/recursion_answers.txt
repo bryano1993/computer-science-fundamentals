@@ -1,0 +1,61 @@
+1.Define and compare recursion and iteration.
+
+- iteration is the technique of utilizing a loop to repeat a process and recursion is the technique where a function calls itself with parameters incrementally moving toward one of the base cases.
+
+
+2.Name five algorithms that are commonly implemented by recursion.
+
+Fibonacci series
+Find the smallest/largest number in a set
+Factorial
+Merge Sort
+Binary Tree Search
+
+
+3.When should you use recursion, and when should you avoid recursion? Give examples for each.
+
+- You should use recursion whenever a problem can be solved by dividing it into sub-problems, that can use the same algorithm for solving them. For example, any problems in computational geometry 
+(and 3D games) can be solved recursively. You should not use iteration it is cleaner because it tends to run slower than iterations. For example, finding a max/min number in a dataset is cleaner in iteration.
+
+
+4.Compare the recursive and iterative solutions to the three algorithms from the checkpoint (Factorial, Maximum, and Fibonacci). What is similar, and what is different?
+
+- All three use the base case and has it so the algorithm eventually leads to the base case. The difference is in the layout and syntax. An iteration uses loops while recursion does not.
+
+5.Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
+
+var count = function(anArray) {
+  let total = 0;
+  for (let i = 0; i < anArray.length; i ++) {
+    total += anArray[i].length ? count(anArray[i]) : 1;
+  }
+  return total;
+};
+
+6.A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
+
+var palindrome = function(word) {
+  if (word.length === 0 || word.length === 1) {
+    return true;
+  }
+  if (string[0] === word[word.length -1]) {
+    return palindrome(eord.slice(1, word.length -1) );
+  }
+  return false;
+}
+
+7.Laura and Xander are going door-to-door around their block looking for their lost cat. Write a recursive algorithm showing one way they can visit every house on their block exactly once.
+
+var searchForCat = (anArray, catHouse) => {
+    found = false;
+
+    if (anArray[0] === catHouse) {
+      found = true;
+      return "Cat found!";
+    }
+    if (found === false) {
+      anArray.splice(0,1);
+      return searchForCat(anArray, catHouse);
+    };
+
+};
