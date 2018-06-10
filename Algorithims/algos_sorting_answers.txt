@@ -1,0 +1,61 @@
+1.Write pseudocode for bubble sort.
+
+ FUNCTION bubbleSort( list : array of items )
+
+   loop = list.count;
+   
+   FOR i = 0 to loop-1 do:
+      swapped = false
+		
+      FOR j = 0 to loop-1 do:
+      
+         /* compare the adjacent elements */   
+         IF list[j] > list[j+1] then
+            /* swap them */
+            swap( list[j], list[j+1] )		 
+            swapped = true
+         ENDIF
+         
+      ENDFOR
+      
+      /*if no number was swapped that means 
+      array is sorted now, break the loop.*/
+      
+      IF(not swapped) then
+         break
+      ENDIF
+      
+   ENDFOR
+   
+ENDFUNCTION return list
+
+2.Write pseudocode for quicksort.
+
+FUNCTION quickSort(left, right)
+
+   IF right-left <= 0
+      return
+   ELSE     
+      pivot = A[right]
+      partition = partitionFunc(left, right, pivot)
+      quickSort(left,partition-1)
+      quickSort(partition+1,right)    
+   ENDIF		
+   
+ENDFUNCTION
+
+3.We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. 
+After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. 
+Walking through each algorithm with a few sample collections may help.
+
+- A: Quicksort is efficient because it uses a lot less memory. Merge sort uses worst case running time  0(n log n) that makes it so it scales well with 
+big lists. However, Quicksort has O(n^2) worst case runtime and O(nlogn) average case runtime. Therefore, it’s superior to merge sort in many scenarios
+ because many factors influence an algorithm’s runtime, and, when taking them all together, quicksort wins out.  Lastly, they both have time complexity 0(n log(n)). 
+
+
+4.All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. 
+What is the ideal input for bucket sort?
+
+- Bucket sort is a comparison sort algorithm that operates on elements by dividing them into different buckets and then sorting these buckets individually.
+ Each bucket is sorted individually using a separate sorting algorithm or by applying the bucket sort algorithm recursively. 
+ Bucket sort is mainly useful when the input is uniformly distributed over a range.
